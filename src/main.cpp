@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+#include <iostream>
+#include <string>
+#include "reverse_nodes_in_k-group.h"
+
+int main() {
+    remove nth node from end of list
+    std::vector<std::string> v;
+    return 0;
+}
+=======
 #include <iostream>
 #include "regular_expression_matching.h"
 
@@ -17,3 +28,4 @@ int main() {
 
     return 0;
 }
+>>>>>>> origin/master

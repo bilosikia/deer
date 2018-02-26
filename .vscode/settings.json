@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "xstring": "cpp",
+        "algorithm": "cpp",
+        "iosfwd": "cpp",
+        "xlocale": "cpp",
+        "utility": "cpp",
+        "xutility": "cpp",
+        "xiosbase": "cpp"
+    }
+}
