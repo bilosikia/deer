@@ -1,13 +1,19 @@
 #include <iostream>
-#include "palindrome_number.h"
+#include "regular_expression_matching.h"
 
 int main() {
     Solution s;
-    std::cout << s.isPalindrome(1000021) << std::endl;
-    std::cout << s.isPalindrome(1) << std::endl;
-    std::cout << s.isPalindrome(12) << std::endl;
-    std::cout << s.isPalindrome(121) << std::endl;
-    std::cout << s.isPalindrome(123421) << std::endl;
-    std::cout << s.isPalindrome(2412) << std::endl;
+//    std::cout << s.isMatch("aa","a") << std::endl;
+//    std::cout << s.isMatch("aa","aa") << std::endl;
+//    std::cout << s.isMatch("aaa","aa") << std::endl;
+//    std::cout << s.isMatch("aa", "a*") << std::endl;
+//    std::cout << s.isMatch("aa", ".*") << std::endl;
+//    std::cout << s.isMatch("ab", ".*") << std::endl;
+    std::cout << s.isMatch("aab", "c*a*b") << std::endl;
+    std::cout << s.isMatch("aaa", "ab*ac*a") << std::endl;
+    std::cout << s.isMatch("a", "ab*") << std::endl;
+    std::cout << s.isMatch("aaa", "ab*a") << std::endl;
+    std::cout << s.isMatch("ab", ".*..") << std::endl;
+
     return 0;
 }
