@@ -1,10 +1,10 @@
 #include <utility>
-#include "search_in_rotated_sorted_array.h"
+#include "trapping_rain_water.h"
 using namespace std;
 
 int main() {
     Solution s;
-    vector<int> v = {4,5,6,7,8,1,2,3};
-    s.search(v, 8);
+    vector<int> v = {0,1,0,2,1,0,1,3,2,1,2,1};
+    std::cout << s.trap(v);
     return 0;
 }
