@@ -1,14 +1,50 @@
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
 
-#include <vector>
-using namespace std;
+// 递归
+class Solution {
+public:
+    vector<TreeNode*> generateTrees(int n) {
+        if(n <= 0) {
+            return std::vector<TreeNode *>();
+        }
+        return generateTree(1, n);
+    }
 
-struct TreeNode {
-    int val;
-    TreeNode *left;
-    TreeNode *right;
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    std::vector<TreeNode *> generateTree(int start, int end) {
+        std::vector<TreeNode *> r;
+        if(start > end) {
+            r.push_back(nullptr);
+        }
+        else if(start == end) {
+            r.push_back(new TreeNode(start));
+        }
+        else {
+            for(int i = start; i <= end; ++i) {
+                std::vector<TreeNode *> left = generateTree(start, i - 1);
+                std::vector<TreeNode *> right = generateTree(i + 1, end);
+                for(auto li : left) {
+                    for(auto ri : right) {
+                        TreeNode *root = new TreeNode(i);
+                        root -> left = li;
+                        root -> right = ri;
+                        r.push_back(root);
+                    }
+                }
+            }
+        }
+        return r;
+    }
 };
-  
+
+// dp
 class Solution {
 public:
     vector<TreeNode*> generateTrees(int n) {
@@ -47,9 +83,3 @@ public:
         }
     }
 };
-
-int main() {
-    Solution s;
-    s.generateTrees(3);
-    return 0;
-}
